@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Traslados México | Tu destino, nuestra ruta</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f4ef;
+    color:#292923;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#706a58;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#333;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#756e5a;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 22px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:#5d594b;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#403d34;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(rgba(30,30,25,.55),rgba(30,30,25,.35)),
+    linear-gradient(135deg,#777,#222);
+
+    color:white;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:90%;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,75px);
+    max-width:800px;
+    line-height:1.02;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.hero p{
+    font-size:21px;
+    max-width:600px;
+    line-height:1.5;
+    margin:25px 0;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn-white{
+    background:white;
+    color:#333;
+}
+
+/* ================= BENEFICIOS ================= */
+
+.benefits{
+    background:white;
+    padding:35px 20px;
+}
+
+.benefits-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.benefit{
+    text-align:center;
+    padding:15px;
+}
+
+.benefit-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.benefit h3{
+    font-size:15px;
+    text-transform:uppercase;
+}
+
+.benefit p{
+    color:#777;
+    margin-top:6px;
+    font-size:14px;
+}
+
+/* ================= SECCIONES ================= */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:85px 25px;
+}
+
+.section-title{
+    font-size:42px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.section-subtitle{
+    color:#777;
+    margin-bottom:40px;
+}
+
+/* ================= CAMIONETAS ================= */
+
+.vehicles{
+    display:grid;
+    grid-template-columns:repeat(1,1fr);
+    gap:25px;
+}
+
+.vehicle{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.vehicle:hover{
+    transform:translateY(-5px);
+}
+
+.vehicle-gallery{
+    height:520px;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:3px;
+    background:#e8e6df;
+    overflow:hidden;
+}
+
+.vehicle-main-image{
+    width:100%;
+    height:520px;
+    object-fit:contain;
+    display:block;
+}
+
+.vehicle-side{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    min-height:0;
+    overflow:hidden;
+}
+
+.vehicle-side img{
+    width:100%;
+    flex:1;
+    min-height:0;
+    object-fit:contain;
+    display:block;
+}
+
+.vehicle-side img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+/* Urvan: tiene 3 imágenes laterales */
+.vehicle:nth-child(3) .vehicle-side{
+    grid-template-rows:1fr 1fr 1fr;
+}
+
+.vehicle-info{
+    padding:25px;
+}
+
+.vehicle-info h3{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.vehicle-info p{
+    color:#666;
+    margin:8px 0;
+}
+
+.vehicle-description{
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid #eee;
+    line-height:1.5;
+}
+
+/* ================= RESERVACIÓN ================= */
+
+.reservation-section{
+    background:#e9e7df;
+}
+
+.reservation{
+    max-width:1200px;
+    margin:auto;
+    padding:85px 25px;
+}
+
+.reservation-box{
+    background:white;
+    border-radius:15px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+input,select,textarea{
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-family:inherit;
+    font-size:15px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+    margin-top:25px;
+    padding:17px;
+    border:0;
+    border-radius:6px;
+    background:#25D366;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.submit:hover{
+    background:#1daa53;
+}
+
+/* ================= DESTINOS ================= */
+
+.states{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.state{
+    background:white;
+    border:1px solid #ddd;
+    padding:13px;
+    border-radius:6px;
+    text-align:center;
+    transition:.2s;
+}
+
+.state:hover{
+    background:#686250;
+    color:white;
+}
+
+/* ================= COMO FUNCIONA ================= */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.step{
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.number{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#686250;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:62px;
+    height:62px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    z-index:999;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#302f29;
+    color:white;
+    padding:50px 25px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#ccc;
+    margin-bottom:9px;
+    display:block;
+    text-decoration:none;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.contact-link{
+    color:#ccc;
+    text-decoration:none;
+}
+
+.contact-link:hover{
+    color:white;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #555;
+    margin-top:40px;
+    padding-top:20px;
+    color:#aaa;
+}
+
+/* ================= CELULAR ================= */
+
+@media(max-width:900px){
+
+    nav{
+        display:none;
+    }
+
+    .benefits-container,
+    .vehicles,
+    .steps{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .states{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:600px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .benefits-container,
+    .vehicles,
+    .steps,
+    .form-grid,
+    .states{
+        grid-template-columns:1fr;
+    }
+
+    .reservation-box{
+        padding:25px;
+    }
+
+    .section{
+        padding:60px 20px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .vehicle-gallery{
+        height:250px;
+    }
+
+    .vehicle-main-image{
+        height:250px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+🚐 TRASLADOS <span>MÉXICO</span>
+</div>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#camionetas">Camionetas</a>
+<a href="#reservar">Reservar</a>
+<a href="#destinos">Destinos</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<a href="#reservar" class="btn btn-primary">
+Reservar ahora
+</a>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<h1>
+Tu viaje comienza
+trasladándote con nosotros
+</h1>
+
+<p>
+Traslados privados, cómodos y seguros
+a cualquier destino de la República Mexicana.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#reservar" class="btn btn-primary">
+Reservar traslado →
+</a>
+
+<a href="#camionetas" class="btn btn-white">
+Ver camionetas
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= BENEFICIOS ================= -->
+
+<section class="benefits">
+
+<div class="benefits-container">
+
+<div class="benefit">
+<div class="benefit-icon">🕐</div>
+<h3>Puntualidad</h3>
+<p>Tu tiempo es importante.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">💺</div>
+<h3>Comodidad</h3>
+<p>Viaja cómodamente.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🛡️</div>
+<h3>Seguridad</h3>
+<p>Viaja con tranquilidad.</p>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">👨‍👩‍👧‍👦</div>
+<h3>Ideal para grupos</h3>
+<p>Familia, amigos o negocios.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CAMIONETAS ================= -->
+
+<section class="section" id="camionetas">
+
+<h2 class="section-title">
+Nuestras camionetas
+</h2>
+
+<p class="section-subtitle">
+Conoce nuestras unidades disponibles para tu próximo traslado.
+</p>
+
+
+<div class="vehicles">
+
+
+<!-- CAMIONETA 1 -->
+
+<div class="vehicle">
+
+<div class="vehicle-gallery">
+
+<img
+src="imagenescamionetas/sprinter2023-exterior.jpg"
+alt="Mercedes-Benz Sprinter 2023"
+class="vehicle-main-image">
+
+<div class="vehicle-side">
+
+<img
+src="imagenescamionetas/sprinter2023-interior.jpg"
+alt="Interior Mercedes-Benz Sprinter 2023">
+
+<img
+src="imagenescamionetas/sprinter2023-interior2final.jpg"
+alt="Interior Mercedes-Benz Sprinter 2023">
+
+</div>
+
+</div>
+
+<div class="vehicle-info">
+
+<h3>Mercedes-Benz Sprinter 2023</h3>
+
+<p>👥 Hasta 20 pasajeros</p>
+
+<p>🧳 Amplio espacio para equipaje</p>
+
+<p>❄️ Aire acondicionado</p>
+
+<div class="vehicle-description">
+Unidad ideal para grupos y traslados de larga distancia.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CAMIONETA 2 -->
+
+<div class="vehicle">
+
+<div class="vehicle-gallery">
+
+<img
+src="imagenescamionetas/sprinter13-exteriorfinal.jpg"
+alt="Mercedes-Benz Sprinter"
+class="vehicle-main-image">
+
+<div class="vehicle-side">
+
+<img
+src="imagenescamionetas/sprinter13-interiorfinal.jpg"
+alt="Interior Mercedes-Benz Sprinter">
+
+<img
+src="imagenescamionetas/sprinter13-interior2final.jpg"
+alt="Interior Mercedes-Benz Sprinter">
+
+</div>
+
+</div>
+
+<div class="vehicle-info">
+
+<h3>Mercedes-Benz Sprinter</h3>
+
+<p>👥 Hasta 13 pasajeros</p>
+
+<p>🧳 Espacio para equipaje</p>
+
+<p>❄️ Aire acondicionado</p>
+
+<div class="vehicle-description">
+Una opción cómoda y espaciosa para grupos pequeños.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CAMIONETA 3 -->
+
+<div class="vehicle">
+
+<div class="vehicle-gallery">
+
+<img
+src="imagenescamionetas/urvan-lateral.jpg"
+alt="Nissan Urvan"
+class="vehicle-main-image">
+
+<div class="vehicle-side">
+
+<img
+src="imagenescamionetas/urvan-interior.jpg"
+alt="Interior Nissan Urvan">
+
+<img
+src="imagenescamionetas/urvan-pantalla.jpg"
+alt="Nissan Urvan con pantalla">
+
+<img
+src="imagenescamionetas/urvan-cajuela.jpg"
+alt="Nissan Urvan con cajuela">
+
+
+
+</div>
+
+</div>
+
+<div class="vehicle-info">
+
+<h3>Nissan Urvan</h3>
+
+<p>👥 Hasta 13 pasajeros</p>
+
+<p>🧳Espacio para equipaje</p>
+
+<p>❄️ Aire acondicionado</p>
+
+<div class="vehicle-description">
+Unidad cómoda para traslados familiares, turísticos y empresariales.
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= RESERVACIÓN ================= -->
+
+<section class="reservation-section" id="reservar">
+
+<div class="reservation">
+
+<h2 class="section-title">
+Reserva tu traslado
+</h2>
+
+<p class="section-subtitle">
+Completa tus datos y envía tu solicitud directamente a nuestro WhatsApp.
+</p>
+
+
+<div class="reservation-box">
+
+<form id="reservationForm">
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>Nombre completo *</label>
+
+<input
+type="text"
+id="nombre"
+placeholder="Tu nombre"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Teléfono *</label>
+
+<input
+type="tel"
+id="telefono"
+placeholder="55 0000 0000"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Correo electrónico</label>
+
+<input
+type="email"
+id="correo"
+placeholder="correo@ejemplo.com">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Número de pasajeros *</label>
+
+<select id="pasajeros" required>
+
+<option value="">Selecciona</option>
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Estado de origen *</label>
+
+<select id="origen" required>
+
+<option value="">Selecciona un estado</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Estado de destino *</label>
+
+<select id="destino" required>
+
+<option value="">Selecciona un estado</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Fecha del viaje *</label>
+
+<input
+type="date"
+id="fecha"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Tipo de camioneta *</label>
+
+<select id="camioneta" required>
+
+<option value="">Selecciona una camioneta</option>
+
+<option>Mercedes-Benz Sprinter 2023</option>
+<option>Mercedes-Benz Sprinter</option>
+<option>Nissan Urvan</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>¿Viaje redondo?</label>
+
+<select id="redondo">
+
+<option>No</option>
+<option>Sí</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Hora aproximada de salida</label>
+
+<input
+type="time"
+id="hora">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Fecha de regreso</label>
+
+<input
+type="date"
+id="regreso">
+
+</div>
+
+
+<div class="form-group full">
+
+<label>Información adicional</label>
+
+<textarea
+id="comentarios"
+placeholder="Cuéntanos algo más sobre tu viaje..."></textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+type="submit"
+class="submit">
+
+📱 ENVIAR SOLICITUD POR WHATSAPP
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= DESTINOS ================= -->
+
+<section class="section" id="destinos">
+
+<h2 class="section-title">
+Destinos
+</h2>
+
+<p class="section-subtitle">
+Realizamos traslados a toda la República Mexicana.
+</p>
+
+<div class="states" id="states"></div>
+
+</section>
+
+
+<!-- ================= COMO FUNCIONA ================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+¿Cómo funciona?
+</h2>
+
+<p class="section-subtitle">
+Reservar tu traslado es muy sencillo.
+</p>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="number">1</div>
+
+<h3>Solicita</h3>
+
+<p>
+Completa el formulario con
+los datos de tu viaje.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">2</div>
+
+<h3>Confirmamos</h3>
+
+<p>
+Recibimos tu solicitud y
+te contactamos por WhatsApp.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">3</div>
+
+<h3>Viaja</h3>
+
+<p>
+Nosotros nos encargamos
+de tu traslado.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACTO ================= -->
+
+<footer id="contacto">
+
+<div class="footer-container">
+
+
+<div>
+
+<h3>TRASLADOS MÉXICO</h3>
+
+<p>
+Tu destino, nuestra ruta.
+</p>
+
+<p>
+Traslados privados a toda
+la República Mexicana.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Enlaces</h3>
+
+<a href="#inicio">Inicio</a>
+<a href="#camionetas">Camionetas</a>
+<a href="#reservar">Reservar</a>
+<a href="#destinos">Destinos</a>
+
+</div>
+
+
+<div>
+
+<h3>Contacto</h3>
+
+<p>
+📱 WhatsApp
+</p>
+
+<a
+class="contact-link"
+href="mailto:trasladosmexico.reservas@gmail.com">
+
+📧 trasladosmexico.reservas@gmail.com
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Traslados México · Todos los derechos reservados.
+
+</div>
+
+</footer>
+
+
+<!-- ================= BOTÓN WHATSAPP ================= -->
+
+<a
+class="whatsapp"
+href="https://wa.me/525549624575"
+target="_blank"
+aria-label="Contactar por WhatsApp">
+
+💬
+
+</a>
+
+
+<script>
+
+/* =====================================
+   ESTADOS DE LA REPÚBLICA MEXICANA
+===================================== */
+
+const estados = [
+
+"Aguascalientes",
+"Baja California",
+"Baja California Sur",
+"Campeche",
+"Chiapas",
+"Chihuahua",
+"Ciudad de México",
+"Coahuila",
+"Colima",
+"Durango",
+"Estado de México",
+"Guanajuato",
+"Guerrero",
+"Hidalgo",
+"Jalisco",
+"Michoacán",
+"Morelos",
+"Nayarit",
+"Nuevo León",
+"Oaxaca",
+"Puebla",
+"Querétaro",
+"Quintana Roo",
+"San Luis Potosí",
+"Sinaloa",
+"Sonora",
+"Tabasco",
+"Tamaulipas",
+"Tlaxcala",
+"Veracruz",
+"Yucatán",
+"Zacatecas"
+
+];
+
+
+/* =====================================
+   LLENAR ORIGEN Y DESTINO
+===================================== */
+
+const origen =
+document.getElementById("origen");
+
+const destino =
+document.getElementById("destino");
+
+const states =
+document.getElementById("states");
+
+
+estados.forEach(function(estado){
+
+let optionOrigen =
+document.createElement("option");
+
+optionOrigen.value = estado;
+optionOrigen.textContent = estado;
+
+origen.appendChild(optionOrigen);
+
+
+let optionDestino =
+document.createElement("option");
+
+optionDestino.value = estado;
+optionDestino.textContent = estado;
+
+destino.appendChild(optionDestino);
+
+
+let estadoDiv =
+document.createElement("div");
+
+estadoDiv.className = "state";
+
+estadoDiv.textContent = estado;
+
+states.appendChild(estadoDiv);
+
+});
+
+
+/* =====================================
+   EVITAR FECHAS PASADAS
+===================================== */
+
+const fecha =
+document.getElementById("fecha");
+
+const regreso =
+document.getElementById("regreso");
+
+const hoy =
+new Date().toISOString().split("T")[0];
+
+fecha.min = hoy;
+regreso.min = hoy;
+
+
+/* =====================================
+   RESERVACIÓN POR WHATSAPP
+===================================== */
+
+document
+.getElementById("reservationForm")
+.addEventListener("submit",function(event){
+
+event.preventDefault();
+
+
+const nombre =
+document.getElementById("nombre").value;
+
+const telefono =
+document.getElementById("telefono").value;
+
+const correo =
+document.getElementById("correo").value;
+
+const pasajeros =
+document.getElementById("pasajeros").value;
+
+const origenSeleccionado =
+document.getElementById("origen").value;
+
+const destinoSeleccionado =
+document.getElementById("destino").value;
+
+const fechaSeleccionada =
+document.getElementById("fecha").value;
+
+const camioneta =
+document.getElementById("camioneta").value;
+
+const redondo =
+document.getElementById("redondo").value;
+
+const hora =
+document.getElementById("hora").value;
+
+const regresoSeleccionado =
+document.getElementById("regreso").value;
+
+const comentarios =
+document.getElementById("comentarios").value;
+
+
+/* =====================================
+   MENSAJE QUE RECIBIRÁ TU PAPÁ
+===================================== */
+
+const mensaje =
+
+`🚐 *NUEVA SOLICITUD DE TRASLADO*
+
+👤 *Cliente:* ${nombre}
+
+📱 *Teléfono:* ${telefono}
+
+📧 *Correo:* ${correo || "No proporcionado"}
+
+📍 *Origen:* ${origenSeleccionado}
+
+📍 *Destino:* ${destinoSeleccionado}
+
+📅 *Fecha de salida:* ${fechaSeleccionada}
+
+⏰ *Hora:* ${hora || "No especificada"}
+
+👥 *Pasajeros:* ${pasajeros}
+
+🚐 *Camioneta:* ${camioneta}
+
+🔄 *Viaje redondo:* ${redondo}
+
+📅 *Fecha de regreso:* ${regresoSeleccionado || "No aplica"}
+
+📝 *Información adicional:*
+${comentarios || "Sin comentarios"}
+
+━━━━━━━━━━━━━━━━
+
+Solicitud enviada desde la página web.`;
+
+
+/* =====================================
+   NÚMERO DE WHATSAPP DE TU PAPÁ
+===================================== */
+
+const numero = "525549624575";
+
+
+/* =====================================
+   ABRIR WHATSAPP
+===================================== */
+
+const whatsappURL =
+"https://wa.me/" +
+numero +
+"?text=" +
+encodeURIComponent(mensaje);
+
+window.open(whatsappURL,"_blank");
+
+});
+
+</script>
+
+
+</body>
+
+</html>
